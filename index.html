@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lux Optika - Ko'zoynaklar Do'koni</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <h1 class="logo">
+                    <i class="fas fa-glasses"></i> Lux Optika
+                </h1>
+            </div>
+            
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active" data-uz="Bosh sahifa" data-ru="Главная">Bosh sahifa</a></li>
+                    <li><a href="#ayollar" class="nav-link" data-uz="Ayollar" data-ru="Женские">Ayollar</a></li>
+                    <li><a href="#erkaklar" class="nav-link" data-uz="Erkaklar" data-ru="Мужские">Erkaklar</a></li>
+                    <li><a href="#brendlar" class="nav-link" data-uz="Brendlar" data-ru="Бренды">Brendlar</a></li>
+                    <li><a href="#aksesuarlar" class="nav-link" data-uz="Aksesuarlar" data-ru="Аксессуары">Aksesuarlar</a></li>
+                    <li><a href="#sevimlilар" class="nav-link" data-uz="Sevimlilар" data-ru="Избранные">Sevimlilар</a></li>
+                    <li><a href="#filiallar" class="nav-link" data-uz="Do'konlar" data-ru="Магазины">Do'konlar</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-controls">
+                <div class="language-selector">
+                    <button id="langUz" class="lang-btn active">O'Z</button>
+                    <button id="langRu" class="lang-btn">РУ</button>
+                </div>
+                <button class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="user-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 data-uz="Dunyoning Eng Yaxshi Ko'zoynaklari" data-ru="Лучшие очки в мире">Dunyoning Eng Yaxshi Ko'zoynaklari</h2>
+            <p data-uz="Sizning stilingiz, sizning identitetingiz" data-ru="Ваш стиль, ваша личность">Sizning stilingiz, sizning identitetingiz</p>
+            <button class="hero-btn" data-uz="Xaridni Boshlash" data-ru="Начать покупки">Xaridni Boshlang</button>
+        </div>
+        <div class="hero-slider">
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=400&fit=crop" alt="Featured Glasses" class="hero-image">
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Bosh Sahifa / Home Section -->
+        <section id="home-section" class="section">
+            <h2 class="section-title" data-uz="Barcha Ko'zoynaklari" data-ru="Все очки">Barcha Ko'zoynaklari</h2>
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label data-uz="Rang:" data-ru="Цвет:">Rang:</label>
+                    <select id="colorFilter" class="filter-select">
+                        <option value="all" data-uz="Barcha Ranglar" data-ru="Все цвета">Barcha Ranglar</option>
+                        <option value="black" data-uz="Qora" data-ru="Чёрный">Qora</option>
+                        <option value="red" data-uz="Qizil" data-ru="Красный">Qizil</option>
+                        <option value="blue" data-uz="Koʻk" data-ru="Синий">Koʻk</option>
+                        <option value="gold" data-uz="Kumush" data-ru="Золотой">Kumush</option>
+                        <option value="brown" data-uz="Jigarrang" data-ru="Коричневый">Jigarrang</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label data-uz="Brend:" data-ru="Бренд:">Brend:</label>
+                    <select id="brandFilter" class="filter-select">
+                        <option value="all" data-uz="Barcha Brendlar" data-ru="Все бренды">Barcha Brendlar</option>
+                        <option value="rayban">Ray-Ban</option>
+                        <option value="oakley">Oakley</option>
+                        <option value="gucci">Gucci</option>
+                        <option value="prada">Prada</option>
+                        <option value="polaroid">Polaroid</option>
+                        <option value="tomford">Tom Ford</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label data-uz="Tur:" data-ru="Тип:">Tur:</label>
+                    <select id="typeFilter" class="filter-select">
+                        <option value="all" data-uz="Barcha Turlar" data-ru="Все типы">Barcha Turlar</option>
+                        <option value="sunglasses" data-uz="Quyosh Ko'zoynaklari" data-ru="Солнечные очки">Quyosh Ko'zoynaklari</option>
+                        <option value="prescription" data-uz="Retseptli" data-ru="Рецептные">Retseptli</option>
+                        <option value="sport" data-uz="Sport" data-ru="Спортивные">Sport</option>
+                    </select>
+                </div>
+            </div>
+            <div id="allGlassesGrid" class="products-grid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Ayollar / Women Section -->
+        <section id="ayollar" class="section">
+            <h2 class="section-title" data-uz="Ayollar Ko'zoynaklari" data-ru="Женские очки">Ayollar Ko'zoynaklari</h2>
+            <div id="womenGlassesGrid" class="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Erkaklar / Men Section -->
+        <section id="erkaklar" class="section">
+            <h2 class="section-title" data-uz="Erkaklar Ko'zoynaklari" data-ru="Мужские очки">Erkaklar Ko'zoynaklari</h2>
+            <div id="menGlassesGrid" class="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Brendlar / Brands Section -->
+        <section id="brendlar" class="section">
+            <h2 class="section-title" data-uz="Brendlar" data-ru="Бренды">Brendlar</h2>
+            <div class="brands-grid">
+                <div class="brand-card" data-brand="rayban">
+                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=200&fit=crop" alt="Ray-Ban">
+                    <h3>Ray-Ban</h3>
+                    <p data-uz="Klassik va Zamonaviy" data-ru="Классический и современный">Klassik va Zamonaviy</p>
+                </div>
+                <div class="brand-card" data-brand="oakley">
+                    <img src="https://images.unsplash.com/photo-1559368915-cd4628902d4a?w=300&h=200&fit=crop" alt="Oakley">
+                    <h3>Oakley</h3>
+                    <p data-uz="Sport va Outdoor" data-ru="Спортивные и уличные">Sport va Outdoor</p>
+                </div>
+                <div class="brand-card" data-brand="gucci">
+                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=200&fit=crop" alt="Gucci">
+                    <h3>Gucci</h3>
+                    <p data-uz="Luxe va Eksklyuziv" data-ru="Люкс и эксклюзив">Luxe va Eksklyuziv</p>
+                </div>
+                <div class="brand-card" data-brand="prada">
+                    <img src="https://images.unsplash.com/photo-1559368915-cd4628902d4a?w=300&h=200&fit=crop" alt="Prada">
+                    <h3>Prada</h3>
+                    <p data-uz="Premium Sifat" data-ru="Премиум качество">Premium Sifat</p>
+                </div>
+                <div class="brand-card" data-brand="polaroid">
+                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=200&fit=crop" alt="Polaroid">
+                    <h3>Polaroid</h3>
+                    <p data-uz="Sunglasses va Retseptli" data-ru="Солнечные и рецептные">Sunglasses va Retseptli</p>
+                </div>
+                <div class="brand-card" data-brand="tomford">
+                    <img src="https://images.unsplash.com/photo-1559368915-cd4628902d4a?w=300&h=200&fit=crop" alt="Tom Ford">
+                    <h3>Tom Ford</h3>
+                    <p data-uz="Eksklyuziv Modellar" data-ru="Эксклюзивные модели">Eksklyuziv Modellar</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aksesuarlar / Accessories Section -->
+        <section id="aksesuarlar" class="section">
+            <h2 class="section-title" data-uz="Ko'zoynak Aksesuarlari" data-ru="Аксессуары для очков">Ko'zoynak Aksesuarlari</h2>
+            <div id="accessoriesGrid" class="products-grid">
+                <!-- Accessories will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Sevimlilар / Favorites Section -->
+        <section id="sevimlilар" class="section">
+            <h2 class="section-title" data-uz="Sevimlilар" data-ru="Избранные">Sevimlilар</h2>
+            <div id="favoritesGrid" class="products-grid">
+                <!-- Favorites will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Filiallar / Stores Section -->
+        <section id="filiallar" class="section stores-section">
+            <h2 class="section-title" data-uz="Bizning Do'konlar" data-ru="Наши магазины">Bizning Do'konlar</h2>
+            <div id="storesGrid" class="stores-grid">
+                <!-- Stores will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Savat / Cart Section -->
+        <section id="savat" class="section cart-section">
+            <h2 class="section-title" data-uz="Savat" data-ru="Корзина">Savat</h2>
+            <div id="cartContainer" class="cart-container">
+                <!-- Cart items will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-uz="Lux Optika" data-ru="Lux Optika">Lux Optika</h3>
+                <p data-uz="Sizning Ko'zoynak Saydi" data-ru="Ваш сайт очков">Sizning Ko'zoynak Saydi</p>
+            </div>
+            <div class="footer-section">
+                <h4 data-uz="Havolalar" data-ru="Ссылки">Havolalar</h4>
+                <ul>
+                    <li><a href="#home" data-uz="Bosh sahifa" data-ru="Главная">Bosh sahifa</a></li>
+                    <li><a href="#brendlar" data-uz="Brendlar" data-ru="Бренды">Brendlar</a></li>
+                    <li><a href="#filiallar" data-uz="Do'konlar" data-ru="Магазины">Do'konlar</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-uz="Ijtimoiy Tarmoqlar" data-ru="Социальные сети">Ijtimoiy Tarmoqlar</h4>
+                <div class="social-links">
+                    <a href="https://instagram.com" class="social-btn instagram-btn" data-uz="Instagram" data-ru="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://telegram.org" class="social-btn telegram-btn" data-uz="Telegram" data-ru="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://facebook.com" class="social-btn facebook-btn" data-uz="Facebook" data-ru="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 data-uz="Bog'lanish" data-ru="Контакты">Bog'lanish</h4>
+                <p>📞 +998 71 123-45-67</p>
+                <p>📧 info@luxoptika.uz</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-uz="© 2026 Lux Optika. Barcha Huquqlar Himoyalangan." data-ru="© 2026 Lux Optika. Все права защищены.">&copy; 2026 Lux Optika. Barcha Huquqlar Himoyalangan.</p>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="product-specs">
+                        <div class="spec-item">
+                            <span data-uz="Brend:" data-ru="Бренд:">Brend:</span>
+                            <span id="modalBrand"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span data-uz="Narxi:" data-ru="Цена:">Narxi:</span>
+                            <span id="modalPrice"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span data-uz="Material:" data-ru="Материал:">Material:</span>
+                            <span id="modalMaterial"></span>
+                        </div>
+                        <div class="spec-item">
+                            <span data-uz="O'lchami:" data-ru="Размер:">O'lchami:</span>
+                            <span id="modalSize"></span>
+                        </div>
+                    </div>
+                    <div class="color-filter">
+                        <label data-uz="Rang Tanlang:" data-ru="Выберите цвет:">Rang Tanlang:</label>
+                        <div id="colorOptions" class="color-options">
+                            <!-- Color options will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="quantity-selector">
+                        <label data-uz="Miqdori:" data-ru="Количество:">Miqdori:</label>
+                        <input type="number" id="quantityInput" min="1" value="1">
+                    </div>
+                    <div class="modal-actions">
+                        <button id="addToCartBtn" class="btn-primary" data-uz="Savatga Qo'shish" data-ru="Добавить в корзину">Savatga Qo'shish</button>
+                        <button id="addToFavoritesBtn" class="btn-secondary">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login/Register Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content login-modal">
+            <span class="close">&times;</span>
+            <div class="login-container">
+                <h2 id="loginTitle" data-uz="Ro'yxatdan O'tish" data-ru="Регистрация">Ro'yxatdan O'tish</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label data-uz="Email:" data-ru="Email:">Email:</label>
+                        <input type="email" id="emailInput" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-uz="Telefon Raqami:" data-ru="Номер телефона:">Telefon Raqami:</label>
+                        <input type="tel" id="phoneInput" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-uz="Parol:" data-ru="Пароль:">Parol:</label>
+                        <input type="password" id="passwordInput" required>
+                    </div>
+                    <button type="submit" class="btn-primary" data-uz="Ro'yxatdan O'tish" data-ru="Зарегистрироваться">Ro'yxatdan O'tish</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
